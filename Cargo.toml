@@ -1,0 +1,72 @@
+[workspace]
+resolver = "3"
+members = ["crates/*", "apps/*", "xtask"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+rust-version = "1.95"
+publish = false
+
+[workspace.dependencies]
+# internal
+starter-domain = { path = "crates/domain" }
+starter-application = { path = "crates/application" }
+starter-platform = { path = "crates/platform" }
+starter-storage-sqlite = { path = "crates/storage-sqlite" }
+starter-storage-browser = { path = "crates/storage-browser" }
+starter-ui-egui = { path = "crates/ui-egui" }
+
+# foundation
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+anyhow = "1"
+uuid = { version = "1.28", features = ["v7", "serde"] }
+schemars = { version = "1.2", features = ["uuid1"] }
+log = "0.4"
+web-time = "1"
+
+# native infrastructure
+rusqlite = { version = "0.40", features = ["bundled"] }
+directories = "6"
+env_logger = { version = "0.11", default-features = false, features = ["auto-color", "humantime"] }
+clap = { version = "4.6", features = ["derive", "env"] }
+
+# ui
+egui = "0.36"
+eframe = { version = "0.36", default-features = false }
+egui_kittest = "0.36"
+
+# web
+wasm-bindgen = "0.2.129"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = "0.3"
+
+# testing
+assert_cmd = "2"
+tempfile = "3"
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+dbg_macro = "warn"
+todo = "warn"
+
+[profile.dev.package."*"]
+opt-level = 2
+
+# Browser build (trunk passes `--release`): small bundle, no unwinding on wasm32.
+[profile.release]
+lto = "thin"
+
+[profile.web]
+inherits = "release"
+lto = "fat"
+codegen-units = 1
+opt-level = "s"
+strip = true
+panic = "abort"

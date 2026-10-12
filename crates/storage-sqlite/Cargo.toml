@@ -1,0 +1,21 @@
+[package]
+name = "starter-storage-sqlite"
+description = "ItemRepository on SQLite (rusqlite, bundled) with embedded migrations. Native only."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+starter-domain = { workspace = true }
+starter-application = { workspace = true }
+rusqlite = { workspace = true }
+log = { workspace = true }
+
+[dev-dependencies]
+starter-application = { workspace = true, features = ["contract-tests"] }
+tempfile = { workspace = true }
+
+[lints]
+workspace = true

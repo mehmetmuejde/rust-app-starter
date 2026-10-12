@@ -1,0 +1,25 @@
+[package]
+name = "starter-desktop"
+description = "Native desktop host: eframe (wgpu) + SQLite + thread job runner."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "rust-app-desktop"
+path = "src/main.rs"
+
+[dependencies]
+starter-application = { workspace = true }
+starter-platform = { workspace = true }
+starter-storage-sqlite = { workspace = true }
+starter-ui-egui = { workspace = true }
+eframe = { workspace = true, features = ["default_fonts", "wgpu", "accesskit", "wayland", "x11"] }
+clap = { workspace = true }
+log = { workspace = true }
+anyhow = { workspace = true }
+
+[lints]
+workspace = true

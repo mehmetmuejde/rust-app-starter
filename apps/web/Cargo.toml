@@ -1,0 +1,26 @@
+[package]
+name = "starter-web"
+description = "Browser host: eframe WebRunner (WebGL2) + IndexedDB-backed storage + inline job runner. Build with trunk."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "rust-app-web"
+path = "src/main.rs"
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+starter-application = { workspace = true }
+starter-platform = { workspace = true }
+starter-storage-browser = { workspace = true }
+starter-ui-egui = { workspace = true }
+eframe = { workspace = true, features = ["default_fonts", "glow"] }
+log = { workspace = true }
+wasm-bindgen = { workspace = true }
+wasm-bindgen-futures = { workspace = true }
+web-sys = { workspace = true, features = ["Window", "Document", "Element", "HtmlCanvasElement"] }
+
+[lints]
+workspace = true

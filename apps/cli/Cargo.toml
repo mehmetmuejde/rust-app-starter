@@ -1,0 +1,29 @@
+[package]
+name = "starter-cli"
+description = "Command-line host: clap + SQLite, JSON output, same commands as the GUIs."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "rust-app"
+path = "src/main.rs"
+
+[dependencies]
+starter-application = { workspace = true }
+starter-platform = { workspace = true }
+starter-storage-sqlite = { workspace = true }
+clap = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+tempfile = { workspace = true }
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

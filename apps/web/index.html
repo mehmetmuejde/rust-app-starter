@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rust App Starter</title>
+    <!--
+      trunk: compile this crate to wasm, run wasm-bindgen, inject the loader.
+      `--release` uses [profile.web] and wasm-opt; the feature flags match what rustc enables for
+      wasm32-unknown-unknown by default (bulk memory, sign-ext, …), otherwise wasm-opt rejects the module.
+    -->
+    <link
+      data-trunk
+      rel="rust"
+      data-bin="rust-app-web"
+      data-cargo-profile-release="web"
+      data-wasm-opt="z"
+      data-wasm-opt-params="--enable-bulk-memory --enable-nontrapping-float-to-int --enable-sign-ext --enable-mutable-globals --enable-reference-types --enable-multivalue"
+    />
+    <style>
+      html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; background: #1b1b1b; }
+      canvas { width: 100%; height: 100%; display: block; }
+      #loading {
+        position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+        color: #cfcfcf; font: 16px system-ui, sans-serif; padding: 16px; text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="app_canvas"></canvas>
+    <div id="loading">Loading…</div>
+    <noscript>This application needs JavaScript and WebAssembly.</noscript>
+  </body>
+</html>

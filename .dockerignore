@@ -1,0 +1,11 @@
+# Build context for apps/web/Dockerfile: only sources, no build output or local data.
+.git
+target
+apps/web/dist
+.scratch
+*.sqlite3*
+.DS_Store
+.vscode
+.idea
+CLAUDE.md
+.claude

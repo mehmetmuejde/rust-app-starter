@@ -1,0 +1,44 @@
+# cargo-deny configuration: `cargo deny check` (or `cargo xtask deny`).
+# https://embarkstudios.github.io/cargo-deny/
+
+[graph]
+all-features = false
+
+[advisories]
+# RustSec advisory database. Unmaintained crates are reported for direct dependencies only.
+unmaintained = "workspace"
+ignore = []
+
+[licenses]
+# Licences compatible with distributing the project under MIT OR Apache-2.0.
+allow = [
+    "MIT",
+    "Apache-2.0",
+    "Apache-2.0 WITH LLVM-exception",
+    "BSD-2-Clause",
+    "BSD-3-Clause",
+    "ISC",
+    "Zlib",
+    "BSL-1.0",
+    "Unicode-3.0",
+    "OFL-1.1",
+    "Ubuntu-font-1.0",
+]
+confidence-threshold = 0.9
+# Weak copyleft is allowed per crate only, after a deliberate decision (see docs/adr/0010-*).
+exceptions = [
+    # Used unmodified via `directories` (OS data paths).
+    { allow = ["MPL-2.0"], crate = "option-ext" },
+]
+
+[licenses.private]
+ignore = true
+
+[bans]
+multiple-versions = "allow"
+wildcards = "deny"
+allow-wildcard-paths = true
+
+[sources]
+unknown-registry = "deny"
+unknown-git = "deny"

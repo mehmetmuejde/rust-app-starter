@@ -1,0 +1,14 @@
+[package]
+name = "xtask"
+description = "Project automation: run, build, lint, layer checks and the CI gate (`cargo xtask help`)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde_json = { workspace = true }
+
+[lints]
+workspace = true

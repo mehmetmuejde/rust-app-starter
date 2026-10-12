@@ -1,0 +1,39 @@
+[package]
+name = "starter-storage-browser"
+description = "ItemRepository for the browser: in-memory state mirrored to an IndexedDB snapshot."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+starter-domain = { workspace = true }
+starter-application = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+log = { workspace = true }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+wasm-bindgen = { workspace = true }
+wasm-bindgen-futures = { workspace = true }
+js-sys = { workspace = true }
+web-sys = { workspace = true, features = [
+    "Window",
+    "Event",
+    "DomException",
+    "DomStringList",
+    "IdbFactory",
+    "IdbDatabase",
+    "IdbObjectStore",
+    "IdbOpenDbRequest",
+    "IdbRequest",
+    "IdbTransaction",
+    "IdbTransactionMode",
+] }
+
+[dev-dependencies]
+starter-application = { workspace = true, features = ["contract-tests"] }
+
+[lints]
+workspace = true
