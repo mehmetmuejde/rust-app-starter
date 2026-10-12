@@ -1,6 +1,6 @@
 # 11. Agent skill versioned in this repository
 
-**Status:** Accepted (2026-10-11)
+**Status:** Superseded by ADR-0016
 
 ## Context
 

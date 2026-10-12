@@ -1,5 +1,5 @@
 ---
-name: rust-application-development
+name: rust
 description: Apply when building, extending or reviewing a Rust application with a UI-independent core — desktop (egui/eframe, Iced, Slint, Tauri, Dioxus), browser (WebAssembly) and/or CLI frontends in one Cargo workspace. Covers layering and crate boundaries, typed commands as the single entry point, ports and adapters for storage (SQLite, IndexedDB, PostgreSQL), background jobs vs. async vs. threads, desktop/wasm compatibility, testing, security of agent-facing interfaces and the development workflow. Built around the rust-app-starter template but usable in any Rust application workspace.
 ---
 

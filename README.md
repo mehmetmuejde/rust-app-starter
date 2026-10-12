@@ -117,7 +117,7 @@ apps/
   cli/               L4  clap host                 → rust-app
 xtask/                   cargo xtask: run, lint, layers, wasm, deny, ci
 docs/                    architecture, development guides, ADRs
-skills/                  rust-application-development – rules for coding agents
+.agents/skills/rust/      rules for coding agents (skill)
 ```
 
 ## Documentation
@@ -133,7 +133,7 @@ skills/                  rust-application-development – rules for coding agent
 | Persistence · Jobs · Testing | [database](docs/development/database.md) · [background-jobs](docs/development/background-jobs.md) · [testing](docs/development/testing.md) |
 | Adding a feature | [docs/development/adding-a-feature.md](docs/development/adding-a-feature.md) |
 | Decisions | [docs/adr/](docs/adr/README.md) |
-| Agent skill | [skills/rust-application-development/SKILL.md](skills/rust-application-development/SKILL.md) |
+| Agent skill | [.agents/skills/rust/SKILL.md](.agents/skills/rust/SKILL.md) |
 
 ## Status
 

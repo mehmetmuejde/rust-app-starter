@@ -5,3 +5,4 @@
 *.sqlite3-shm
 .DS_Store
 !CLAUDE.md
+!.agents/

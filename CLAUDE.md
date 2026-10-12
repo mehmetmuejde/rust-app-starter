@@ -7,14 +7,14 @@ Local agent notes for this project (this file is not committed; see the global g
 ## Decisions recorded for agents
 
 - **AI files:** `CLAUDE.md`, `.claude/` etc. stay uncommitted (default).
-- **Exception (2026-10-11, decided by Mehmet):** `skills/rust-application-development/` is a product
-  deliverable and IS versioned in this repo (ADR 0011). It is not covered by the global ignore list,
-  so no `.gitignore` negation is needed.
+- **Exception (2026-10-11, decided by Mehmet):** `.agents/skills/rust/` is a product
+  deliverable and IS versioned in this repo (ADR 0016, supersedes ADR 0011). `.agents/` is on the global
+  ignore list, so the project `.gitignore` re-includes it with `!.agents/`.
 - ADRs live in `docs/adr/` (not `docs/decisions/` as the master prompt suggested).
 
 ## Working rules
 
-- Follow `skills/rust-application-development/SKILL.md`.
+- Follow `.agents/skills/rust/SKILL.md`.
 - Gate before every commit: `cargo xtask ci` (fmt, clippy native+wasm, tests, layers, wasm, cargo-deny).
 - New crate → register in `xtask/src/layers.rs` (and `WASM_CRATES` in `xtask/src/main.rs` if shared with the browser).
 - Never commit or push without Mehmet's explicit approval. Repo: github.com/mehmetmuejde/rust-app-starter (public, branch main).

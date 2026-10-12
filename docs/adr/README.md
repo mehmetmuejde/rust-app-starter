@@ -16,10 +16,11 @@ one the status "Superseded by ADR-XXXX".
 | [0008](0008-trunk-for-web-build.md) | trunk for the browser build | Accepted |
 | [0009](0009-license-mit-or-apache.md) | License: MIT OR Apache-2.0 | Accepted |
 | [0010](0010-dependency-license-policy.md) | Dependency license policy with cargo-deny | Accepted |
-| [0011](0011-agent-skill-in-repository.md) | Agent skill versioned in this repository | Accepted |
+| [0011](0011-agent-skill-in-repository.md) | Agent skill versioned in this repository | Superseded by 0016 |
 | [0012](0012-log-facade.md) | `log` facade for logging | Accepted |
 | [0013](0013-clap-cli.md) | CLI with clap, JSON output and stable exit codes | Accepted |
 | [0014](0014-docker-image-for-the-browser-app.md) | Docker image for the browser app | Accepted |
 | [0015](0015-authentication-at-network-hosts.md) | Authentication only at network hosts | Accepted |
+| [0016](0016-skill-location-agents-directory.md) | Agent skill lives in `.agents/skills/rust/` | Accepted |
 
 New ADR: copy the format, take the next number, add it to this table.

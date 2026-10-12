@@ -32,7 +32,7 @@
 - **D1** – synchronous core with a single owner; tokio only in future network hosts.
 - **D4** – browser persistence: in-memory repository + snapshot flushed to IndexedDB.
 - **License** – `MIT OR Apache-2.0`.
-- **Skill location** – versioned in this repository under `skills/rust-application-development/`
+- **Skill location** – versioned in this repository under `.agents/skills/rust/`
   (deliberate exception to the "AI helper files are not committed" default; to be recorded in the
   project `CLAUDE.md`).
 
@@ -79,7 +79,7 @@ rust-app-starter/
 │   ├── adr/                   Architecture Decision Records (Nygard format)
 │   ├── architecture/          overview, dependency rules, commands, platform abstraction
 │   └── development/           getting started, desktop, web, cli, database, background jobs
-├── skills/rust-application-development/   (Phase 6, see open question Q4)
+├── .agents/skills/rust/       (Phase 6, see open question Q4)
 └── .github/workflows/ci.yml
 ```
 
@@ -340,7 +340,7 @@ the bridge for scripts and agents until MCP exists.
 | 3d | `storage-browser` + `apps/web` | browser build runs via trunk, data survives reload |
 | 4 | tracing, config, CI workflow, cargo-deny, xtask ci, docs (architecture + development) | CI green on 3 OSes + wasm |
 | 5 | Extension concepts: Postgres/server, worker, Docker, MCP (maybe stdio MVP), GPU, other UIs | docs + ADRs; only implement what is approved |
-| 6 | `rust-application-development` skill aligned with the implemented architecture | skill reviewed against the code |
+| 6 | `rust` skill aligned with the implemented architecture | skill reviewed against the code |
 
 ## 15. Risks
 
